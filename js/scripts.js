@@ -1,11 +1,11 @@
-//Business Logic
-function Pizza(price, size, toppings) {
+//Business End Logic
+function Pizza(price, pizzaSize, pizzaToppings) {
   this.price = 15;
-  this.size = pizzaSize;
-  this.toppings = pizzaToppings;
+  this.pizzaSize = pizzaSize;
+  this.pizzaToppings = pizzaToppings;
 }
 
-Pizza.prototype.changePriceSize = function() {
+Pizza.prototype.changePrice = function() {
   if (this.size === "small") {
     this.price -= 3
   } else if (this.size === "large") {
@@ -13,20 +13,21 @@ Pizza.prototype.changePriceSize = function() {
   }
 }
 
-Pizza.prototype.changePriceToppings = function() {
-	this.price += (this.toppings.length * .5)
-}
+// Pizza.prototype.changePriceToppings = function() {
+// 	this.price += (this.toppings.length * .5)
+// }
 
-var pizzaSize = "small";
-var pizzaToppings = ["pepperoni"];
-var newPizza = new Pizza(pizzaSize, pizzaToppings);
-newPizza.changePriceSize();
-newPizza.changePriceToppings();
-console.log(newPizza);
+//Front End Logic
+$(document).ready(function() {
+  $("form#pizzaMaker").submit(function() {
+    event.preventDefault();
 
-//User Interface Logic
-// $(document).ready(function() {
-//   var pizzaSize = $("input#pizzaSize").val();
-//   var pizzaToppings = $("input#pizzaSize").val();
-//   var newPizza = new Pizza();
-// });
+    var pizzaSize = $("select#sizeSelector").val();
+
+    var newPizza = new Pizza(pizzaSize);
+    // newPizza.changePrice();
+    // newPizza.changePriceToppings();
+    console.log(newPizza);
+  });
+
+});
