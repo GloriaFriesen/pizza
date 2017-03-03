@@ -8,45 +8,74 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h2>Build your Pizza</h2>
+        <h2>Build your Pizza Party</h2>
       </div>
       <form id="pizzaMaker">
         <div class="row">
           <div class="col-md-4">
-            <div class="form-group">
-              <h4>Pick a Size:</h4>
-              <select class="form-control" id="sizeSelector">
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-                <option value="extra-large">Extra-Large</option>
-              </select>
+            <h4>Pick a Size:</h4>
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" value="Small" checked>
+                Small
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" value="Medium">
+                Medium
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" value="Large">
+                Large
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" value="Extra-Large">
+                Extra-Large
+              </label>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <h4>Pick some Meat:</h4>
-              <input type="checkbox" name="pizzaToppings" value="pepperoni"> Pepperoni.<br>
-              <input type="checkbox" name="pizzaToppings" value="bacon"> Bacon.<br>
-              <input type="checkbox" name="pizzaToppings" value="sausage"> Sausage.<br>
-              <input type="checkbox" name="pizzaToppings" value="pineapple"> Canadian Bacon.<br>
+              <input type="checkbox" name="pizzaToppings" value=" Pepperoni"> Pepperoni<br>
+              <input type="checkbox" name="pizzaToppings" value=" Bacon"> Bacon<br>
+              <input type="checkbox" name="pizzaToppings" value=" Sausage"> Sausage<br>
+              <input type="checkbox" name="pizzaToppings" value=" Canadian Bacon"> Canadian Bacon<br>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <h4>Pick some Veggies:</h4>
-              <input type="checkbox" name="pizzaToppings" value="spinach"> Spinach.<br>
-              <input type="checkbox" name="pizzaToppings" value="mushrooms"> Mushrooms.<br>
-              <input type="checkbox" name="pizzaToppings" value="tomatoes"> Tomatoes.<br>
-              <input type="checkbox" name="pizzaToppings" value="olives"> Olives.<br>
-              <input type="checkbox" name="pizzaToppings" value="bellpeppers"> Bell Peppers.<br>
+              <input type="checkbox" name="pizzaToppings" value=" Spinach"> Spinach<br>
+              <input type="checkbox" name="pizzaToppings" value=" Mushrooms"> Mushrooms<br>
+              <input type="checkbox" name="pizzaToppings" value=" Tomatoes"> Tomatoes<br>
+              <input type="checkbox" name="pizzaToppings" value=" Olives"> Olives<br>
+              <input type="checkbox" name="pizzaToppings" value=" Bell Peppers"> Bell Peppers<br>
             </div>
           </div>
         </div>
-        <button type="submit">Let's Get This Pizza Party Started</button>
+        <button type="submit" class="btn">Let's Get This Pizza Cookin'</button>
       </form>
       <span id="pizzaResult">
-
+        <h2>Here's your tasty pizza:</h2>
+        <div class="row">
+          <div class="col-md-2">
+            <h3>Size: <span class="size"></span></h3>
+          </div>
+          <div class="col-md-3">
+            <h3>Toppings: </h3>
+            <span class="topping"></span>
+          </div>
+          <div class="col-md-2">
+            <h3>Price: </h3>
+            <span class="price"></span>
+          </div>
+        </div>
       </span>
     </div>
 
