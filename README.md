@@ -22,14 +22,14 @@ This web application allows the user to build a pizza based on size and toppings
 |Behavior|Input|Output|
 |:---:|:---:|:---:|
 |Creates pizza and returns object|"Make Pizza"|Pizza = {}|
-|Creates pizza with price|"Make Pizza"|Pizza = {price: $15}|
-|Creates pizza with selected size|"small"|Pizza = {size: small}|
-|Creates pizza with selected toppings|"pepperoni"|Pizza = {toppings: pepperoni}|
-|Creates pizza with multiple toppings|"pepperoni, mushrooms"|Pizza = {toppings: pepperoni, mushrooms}|
-|Adjusts price based on size of pizza|"small"|Pizza = {price: $12, size: small}|
-|Adjusts price based on topping|"pepperoni"|Pizza = {price: $15.50, topping: pepperoni}|
-|Adjusts price based on multiple toppings|"pepperoni, mushrooms"|Pizza = {price: $16, topping: pepperoni, mushrooms}|
-|Adjusts price based on size and toppings|"size: small, toppings: pepperoni, mushrooms"|Pizza = {price: $19, size: large, topping: pepperoni, mushrooms}|
+|Creates pizza with price|"Make Pizza"|Pizza = {price: 15}|
+|Creates pizza with selected size|"small"|Pizza = {size: "small"}|
+|Creates pizza with selected toppings|"pepperoni"|Pizza = {toppings: [pepperoni]}|
+|Creates pizza with multiple toppings|"pepperoni, mushrooms"|Pizza = {toppings: [pepperoni, mushrooms]}|
+|Adjusts price based on size of pizza|"small"|Pizza = {price: 12, size: "small"}|
+|Adjusts price based on topping|"pepperoni"|Pizza = {price: 15.50, topping: [pepperoni]}|
+|Adjusts price based on multiple toppings|"pepperoni, mushrooms"|Pizza = {price: 16, topping: [pepperoni, mushrooms]}|
+|Adjusts price based on size and toppings|"size: small, toppings: pepperoni, mushrooms"|Pizza = {price: 19, size: large, topping: [pepperoni, mushrooms]}|
 
 
 ## Known Bugs
