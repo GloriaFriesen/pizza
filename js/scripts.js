@@ -5,7 +5,7 @@ function Pizza(price, size, toppings) {
   this.toppings = pizzaToppings;
 }
 
-Pizza.prototype.changePrice = function() {
+Pizza.prototype.changePriceSize = function() {
   if (this.size === "small") {
     this.price -= 3
   } else if (this.size === "large") {
@@ -13,10 +13,15 @@ Pizza.prototype.changePrice = function() {
   }
 }
 
+Pizza.prototype.changePriceToppings = function() {
+	this.price += (this.toppings.length * .5)
+}
+
 var pizzaSize = "small";
 var pizzaToppings = ["pepperoni"];
 var newPizza = new Pizza(pizzaSize, pizzaToppings);
-newPizza.changePrice();
+newPizza.changePriceSize();
+newPizza.changePriceToppings();
 console.log(newPizza);
 
 //User Interface Logic
