@@ -1,7 +1,7 @@
 //Business Logic
 function Pizza (price, size, toppings) {
   this.price = 15;
-  this. size = size;
+  this.size = pizzaSize;
   this.toppings = toppings;
 }
 
@@ -10,5 +10,6 @@ function Pizza (price, size, toppings) {
 
 //User Interface Logic
 $(document).ready(function() {
-  var newPizza = new Pizza(price);
+  var pizzaSize = $("input#pizzaSize").val();
+  var newPizza = new Pizza();
 });
