@@ -1,7 +1,7 @@
 //Business End Logic
-function Pizza(price, pizzaSize, pizzaToppings) {
-  this.price = 15;
-  this.pizzaSize = pizzaSize;
+function Pizza (price, size, pizzaToppings) {
+  this.price = price;
+  this.size = size;
   this.pizzaToppings = pizzaToppings;
 }
 
@@ -13,21 +13,27 @@ Pizza.prototype.changePrice = function() {
   }
 }
 
-// Pizza.prototype.changePriceToppings = function() {
-// 	this.price += (this.toppings.length * .5)
-// }
+Pizza.prototype.changePriceToppings = function() {
+	this.price += (this.pizzaToppings.length * .5)
+}
 
-//Front End Logic
+
+//User Interface Logic
 $(document).ready(function() {
   $("form#pizzaMaker").submit(function() {
     event.preventDefault();
+    var price = 15;
 
-    var pizzaSize = $("select#sizeSelector").val();
+    var size = $("select#sizeSelector").val();
 
-    var newPizza = new Pizza(pizzaSize);
-    // newPizza.changePrice();
-    // newPizza.changePriceToppings();
+    var pizzaToppings = [];
+    $("input:checkbox[name=pizzaToppings]:checked").each(function(){
+      var topping = $(this).val();
+      pizzaToppings.push(topping);
+    });
+
+    var newPizza = new Pizza(price, size, pizzaToppings);
+
     console.log(newPizza);
-  });
-
+});
 });
