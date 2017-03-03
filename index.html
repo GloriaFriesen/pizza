@@ -3,17 +3,18 @@
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bahiana|Bangers|Barrio|Cabin+Sketch|Fredericka+the+Great|Kranky|Permanent+Marker|Reenie+Beanie|Trade+Winds|Walter+Turncoat" rel="stylesheet">
     <title>Pizza Party</title>
   </head>
   <body>
     <div class="container">
-      <div class="jumbotron">
-        <h2>Build your Pizza Party</h2>
-      </div>
-      <form id="pizzaMaker">
+      <h1 id="mainHeading">Build your Pizza Party</h1>
+        <form id="pizzaMaker">
         <div class="row">
           <div class="col-md-4">
-            <h4>Pick a Size:</h4>
+            <div class="listTitle">
+              <p>Pick a Size:</p>
+            </div>
             <div class="radio">
               <label>
                 <input type="radio" name="optionsRadios" value="Small" checked>
@@ -41,7 +42,9 @@
           </div>
           <div class="col-md-4">
             <div class="form-group">
-              <h4>Pick some Meat:</h4>
+              <div class="listTitle">
+                <p>Pick some Meat:</p>
+              </div>
               <input type="checkbox" name="pizzaToppings" value=" Pepperoni"> Pepperoni<br>
               <input type="checkbox" name="pizzaToppings" value=" Bacon"> Bacon<br>
               <input type="checkbox" name="pizzaToppings" value=" Sausage"> Sausage<br>
@@ -50,7 +53,9 @@
           </div>
           <div class="col-md-4">
             <div class="form-group">
-              <h4>Pick some Veggies:</h4>
+              <div class="listTitle">
+                <p>Pick some Veggies:</p>
+              </div>
               <input type="checkbox" name="pizzaToppings" value=" Spinach"> Spinach<br>
               <input type="checkbox" name="pizzaToppings" value=" Mushrooms"> Mushrooms<br>
               <input type="checkbox" name="pizzaToppings" value=" Tomatoes"> Tomatoes<br>
@@ -59,26 +64,25 @@
             </div>
           </div>
         </div>
-        <button type="submit" class="btn">Let's Get This Pizza Cookin'</button>
+        <button type="submit" class="btn" id="cookButton">Let's Get This Pizza Cookin'</button>
       </form>
       <span id="pizzaResult">
-        <h2>Here's your tasty pizza:</h2>
+        <h2 id="resultHeading">Here's your tasty pizza:</h2>
         <div class="row">
           <div class="col-md-2">
-            <h3>Size: <span class="size"></span></h3>
+            <h3 class="listTitle">Size: <span class="size"></span></h3>
           </div>
           <div class="col-md-3">
-            <h3>Toppings: </h3>
-            <span class="topping"></span>
+            <h3 class="listTitle">Toppings:
+            <span class="topping"></span></h3>
           </div>
           <div class="col-md-2">
-            <h3>Price: </h3>
-            <span class="price"></span>
+            <h3 class="listTitle">Price:
+            <span class="price"></span></h3>
           </div>
         </div>
       </span>
     </div>
-
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/scripts.js"></script>
   </body>
