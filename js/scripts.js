@@ -34,10 +34,9 @@ $(document).ready(function() {
     newPizza.changePriceSize();
     newPizza.changePriceToppings();
 
-
-    $("#pizzaResult").fadeIn();
-    $("span.size").html("<h4>" + newPizza.size + "</h4>");
-    $("span.topping").html("<h4>" + newPizza.pizzaToppings + "</h4>");
-    $("span.price").html("<h4> $" + newPizza.price.toFixed(2) + "</h4>");
+    $("#pizzaResult").show();
+    $("span.size").append("<h4>" + newPizza.size + "</h4>");
+    $("span.topping").append("<h4>" + newPizza.pizzaToppings + "</h4>");
+    $("span.price").append("<h4> $" + newPizza.price.toFixed(2) + "</h4>");
   });
 });
