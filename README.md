@@ -1,11 +1,11 @@
 # Pizza
 
-#### Build a Pizza, Current Version: 02/24/2017
+#### Pizza Builder, Current Version: 03/03/2017
 
 #### By Gloria Friesen
 
 ## Description
-This web application allow the user to build a pizza based on size and toppings and adjust pricing based on selected options.
+This web application allows the user to build a pizza based on size and toppings and adjusts pricing based on selected options.
 
 ## Setup/Installation Instructions
 * In your web browser of choice, go to: <http://github.com/GloriaFriesen/pizza>
