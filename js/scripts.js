@@ -1,8 +1,9 @@
 //Business End Logic
-function Pizza (price, size, pizzaToppings) {
+function Pizza (price, size, meatToppings, veggieToppings) {
   this.price = price;
   this.size = size;
-  this.pizzaToppings = pizzaToppings;
+  this.meatToppings = meatToppings;
+  this.veggieToppings = veggieToppings
 }
 
 Pizza.prototype.changePriceSize = function() {
@@ -11,12 +12,16 @@ Pizza.prototype.changePriceSize = function() {
   } else if (this.size === "Large") {
   	this.price += 2
   } else if (this.size === "Extra-Large") {
-  	this.price += 3
+  	this.price += 4
   }
 }
 
-Pizza.prototype.changePriceToppings = function() {
-  this.price += (this.pizzaToppings.length * .75);
+Pizza.prototype.changePriceMeat = function() {
+  this.price += (this.meatToppings.length * 1.25);
+}
+
+Pizza.prototype.changePriceVeggie = function() {
+  this.price += (this.veggieToppings.length * .75);
 }
 
 //User Interface Logic
@@ -25,18 +30,26 @@ $(document).ready(function() {
     event.preventDefault();
     var price = 15;
     var size = $("input:radio[name=optionsRadios]:checked").val();
-    var pizzaToppings = [];
-      $("input:checkbox[name=pizzaToppings]:checked").each(function(){
-        var topping = $(this).val();
-        pizzaToppings.push(topping);
+    var meatToppings = [];
+      $("input:checkbox[name=meatToppings]:checked").each(function(){
+        var meatTopping = $(this).val();
+        meatToppings.push(meatTopping);
       });
-    var newPizza = new Pizza(price, size, pizzaToppings);
+    var veggieToppings = [];
+      $("input:checkbox[name=veggieToppings]:checked").each(function(){
+        var veggieTopping = $(this).val();
+        veggieToppings.push(veggieTopping);
+      });
+    var newPizza = new Pizza(price, size, meatToppings, veggieToppings);
+
     newPizza.changePriceSize();
-    newPizza.changePriceToppings();
+    newPizza.changePriceMeat();
+    newPizza.changePriceVeggie();
 
     $("#pizzaResult").show();
     $("span.size").append("<h4>" + newPizza.size + "</h4>");
-    $("span.topping").append("<h4>" + newPizza.pizzaToppings + "</h4>");
+    $("span.meatTopping").append("<h4>" + newPizza.meatToppings + "</h4>");
+    $("span.veggieTopping").append("<h4>" + newPizza.veggieToppings + "</h4>");
     $("span.price").append("<h4> $" + newPizza.price.toFixed(2) + "</h4>");
   });
 });
