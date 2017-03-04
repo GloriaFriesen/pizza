@@ -14,8 +14,12 @@ This web application allows the user to build a pizza based on size and toppings
   * Switch to pizza directory
   * open index.html
 * In browser
-  *
-  *
+  * Select size, meat toppings, and veggie toppings
+  * Click 'Let's get this pizza cookin' button and see your pizza, including price
+
+###### OR
+  * _Go directly to my gh-page in your web browser and start building your pizza: <http://gloriafriesen.github.io/pizza>_
+
 
 ## Specifications
 
